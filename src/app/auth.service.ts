@@ -4,14 +4,16 @@ import { Http} from "@angular/http";
 @Injectable()
 export class AuthService {
   data: any = {};
-  user: any  = {};
+  user = {};
 
   constructor(private http: Http) {}
 
   authorizeUser(authInfo) {
     return this.http.post('http://localhost:8080/api/login', authInfo).map(
         data => {
-           return data.json()
+           const jsonUser = data.json();
+           this.setUserData(jsonUser.user);
+           return jsonUser;
         }
     )
   }
@@ -25,10 +27,19 @@ export class AuthService {
       return this.http.post('http://localhost:8080/api/add-user', userData)
           .map( res => {
               const jsonUser = res.json();
-              this.user.name = jsonUser.fullName;
-              console.log(this.user);
+              this.setUserData(jsonUser.user);
               return jsonUser;
           })
   }
+
+    setUserData(jsonUser) {
+        this.user = {
+            fullName: jsonUser.fullName,
+            email: jsonUser.email
+        };
+        console.dir(this.user);
+        console.log(jsonUser);
+        return jsonUser;
+    }
 
 }
