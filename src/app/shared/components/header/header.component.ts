@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService} from "../../../auth.service";
 
 @Component({
     selector: 'app-header',
@@ -8,10 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    userData: any = JSON.parse(localStorage.getItem('user')).user;
 
     pushRightClass: string = 'push-right';
-    
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(private translate: TranslateService, public router: Router, private auth: AuthService) {
         this.router.events.subscribe((val) => {
             if (val instanceof NavigationEnd && window.innerWidth <= 992 && this.isToggled()) {
                 this.toggleSidebar();
@@ -19,7 +20,9 @@ export class HeaderComponent implements OnInit {
         });
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        console.log(this.userData);
+    }
 
     isToggled(): boolean {
         const dom: Element = document.querySelector('body');
