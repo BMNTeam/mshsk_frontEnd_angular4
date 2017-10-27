@@ -12,8 +12,7 @@ export class ButtonsComponent implements OnInit {
   ngOnInit() {
   }
 
-  print(event) {
-    const containerToPrint = document.querySelector('.main-container');
+  print() {
     window.print();
   }
 
