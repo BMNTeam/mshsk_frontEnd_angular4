@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-buttons',
@@ -14,6 +15,12 @@ export class ButtonsComponent implements OnInit {
 
   print() {
     window.print();
+  }
+
+  save() {
+    const form = document.querySelector('form');
+    const event = new Event('submit');
+    form.dispatchEvent(event);
   }
 
 }

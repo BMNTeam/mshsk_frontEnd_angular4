@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 import {AuthService} from "../auth.service";
 
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -11,6 +12,7 @@ import {AuthService} from "../auth.service";
 })
 export class LoginComponent implements OnInit {
     arr: any = {};
+    public err = '';
 
     constructor(public router: Router, private auth: AuthService) {
     }
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
                     localStorage.setItem('user', JSON.stringify(data) );
                     this.router.navigate(['/dashboard'])
                 } else {
+                    this.err = data.message;
                     localStorage.setItem('user', '{}');
                 }
             }

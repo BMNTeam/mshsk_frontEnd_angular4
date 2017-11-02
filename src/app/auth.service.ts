@@ -33,12 +33,13 @@ export class AuthService {
   }
 
     setUserData(jsonUser) {
+        if (jsonUser === undefined) {
+            return;
+        }
         this.user = {
             fullName: jsonUser.fullName,
             email: jsonUser.email
         };
-        console.dir(this.user);
-        console.log(jsonUser);
         return jsonUser;
     }
 

@@ -12,6 +12,7 @@
                     <div class="form-group">
                         <input type="password" class="form-control input-underline input-lg" id="password" name="password" placeholder="Пароль" ngModel>
                     </div>
+                    <div *ngIf="err" class="alert alert-danger" role="alert">{{err}}</div>
                 </div>
                 <input type="submit" [disabled]="f.invalid" class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()" value="Войти">
                 <a class="btn rounded-btn" [routerLink]="['/signup']">Регистрация</a>

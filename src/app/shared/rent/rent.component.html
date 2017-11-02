@@ -1,4 +1,304 @@
-<div class="form-group input-group">
-  <span class="input-group-addon">@</span>
-  <input class="form-control" placeholder="Username" type="text">
+<div class="bmn_active">
+    <h3>Актив</h3>
+    <div class="card">
+        <div class="card-header">Внеоборотные активы</div>
+        <div class="card-block">
+            <form #f="ngForm" (ngSubmit)="save()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1110</span>
+                            <input name="notMaterialActives1110" class="form-control" placeholder="Нематериальные активы" type="number"
+                                   [(ngModel)]="user.a1110">
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1120</span>
+                            <input name="researchResults1120" class="form-control" placeholder="Результаты исследований и разработок" type="number"
+                                   [(ngModel)]="user.a1120">
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1130</span>
+                            <input name="notMaterialSearchActives1130" class="form-control" placeholder="Нематериальные поисковые активы" type="number"
+                                   [(ngModel)]="user.a1130">
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1140</span>
+                            <input name="question1140" class="form-control" placeholder="Материальные поисковые активы" type="number"
+                                   [(ngModel)]="user.a1140"
+                            >
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1150</span>
+                            <input class="form-control" placeholder="Основные средства" type="number" name="defaultThings1150"
+                                   [(ngModel)]="user.a1150"
+                            >
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1160</span>
+                            <input class="form-control" placeholder="Доходные вложения в материальные ценности" type="number"
+                                   name="a1160"
+                                   [(ngModel)]="user.a1160">
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1170</span>
+                            <input class="form-control" placeholder="Финансовые вложения" type="number"
+                                   name="a1170"
+                                   [(ngModel)]="user.a1170">
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1180</span>
+                            <input class="form-control" placeholder="Отложенные налоговые активы" type="number"
+                                   name="a1180"
+                                   [(ngModel)]="user.a1180">
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">1190</span>
+                            <input class="form-control" placeholder="Прочие внеоборотные активы" type="number"
+                                   name="a1190"
+                                   [(ngModel)]="user.a1190">
+                            <span class="input-group-addon">тыс. р.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+
+    <div class="card">
+        <div class="card-header">Оборотные активы</div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1210</span>
+                        <input class="form-control" placeholder="Запасы" type="number"
+                               name="a1210"
+                               [(ngModel)]="user.a1210"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1220</span>
+                        <input class="form-control" placeholder="Налог на добавленную стоимость
+по приобретенным ценностям" type="number"
+                               name="a1220"
+                               [(ngModel)]="user.a1220">
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1230</span>
+                        <input class="form-control" placeholder="Дебиторская задолженность" type="number"
+                               name="a1230"
+                               [(ngModel)]="user.a1230"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1240</span>
+                        <input class="form-control" placeholder="Финансовые вложения (за исключением денежных эквивалентов)" type="number"
+                               name="a1240"
+                               [(ngModel)]="user.a1240">
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1250</span>
+                        <input class="form-control" placeholder="Денежные средства и денежные эквиваленты" type="number"
+                               name="a1250"
+                               [(ngModel)]="user.a1250"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1260</span>
+                        <input class="form-control" placeholder="Прочие оборотные активы" type="number"
+                               name="a1260"
+                               [(ngModel)]="user.a1260"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<br>
+<hr>
+<br>
+<div class="passive">
+    <h3>Пассив</h3>
+    <div class="card">
+        <div class="card-header">Капитал и резервы</div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1310</span>
+                        <input class="form-control" placeholder="Уставный капитал (складочный капитал, уставный фонд, вклады товарищей)" type="number"
+                               name="p1310"
+                               [(ngModel)]="user.p1310"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1320</span>
+                        <input class="form-control" placeholder="Собственные акции, выкупленные у акционеров" type="number"
+                               name="p1320"
+                               [(ngModel)]="user.p1320"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1340</span>
+                        <input class="form-control" placeholder="Переоценка внеоборотных активов" type="number"
+                               name="p1330"
+                               [(ngModel)]="user.p1330"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1350</span>
+                        <input class="form-control" placeholder="Добавочный капитал (без переоценки)" type="number"
+                               name="p1350"
+                               [(ngModel)]="user.p1350">
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1360</span>
+                        <input class="form-control" placeholder="Резервный капитал" type="number"
+                               name="p1360"
+                               [(ngModel)]="user.p1360"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1370</span>
+                        <input class="form-control" placeholder="Нераспределенная прибыль (непокрытый убыток)" type="number"
+                               name="p1370"
+                               [(ngModel)]="user.p1370"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="card">
+        <div class="card-header">Долгосрочные обязательства</div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1410</span>
+                        <input class="form-control" placeholder="Заемные средства" type="number"
+                               name="p1410"
+                               [(ngModel)]="user.p1410"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1420</span>
+                        <input class="form-control" placeholder="Отложенные налоговые обязательства" type="number"
+                               name="p1420"
+                               [(ngModel)]="user.p1420">
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1440</span>
+                        <input class="form-control" placeholder="Оценочные обязательства" type="number"
+                               name="p1440"
+                               [(ngModel)]="user.p1440"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1450</span>
+                        <input class="form-control" placeholder="Прочие обязательства" type="number"
+                               name="p1450"
+                               [(ngModel)]="user.p1450">
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-header">Краткосрочные обязательства</div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1510</span>
+                        <input class="form-control" placeholder="Заемные средства" type="number"
+                               name="p1510"
+                               [(ngModel)]="user.p1510"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1520</span>
+                        <input class="form-control" placeholder="Кредиторская задолженность" type="number"
+                               name="p1520"
+                               [(ngModel)]="user.p1520"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1530</span>
+                        <input class="form-control" placeholder="Доходы будущих периодов" type="number"
+                               name="p1530"
+                               [(ngModel)]="user.p1530"
+                        >
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1540</span>
+                        <input class="form-control" placeholder="Оценочные обязательства" type="number"
+                               name="p1540"
+                               [(ngModel)]="user.p1540">
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">1550</span>
+                        <input class="form-control" placeholder="Прочие обязательства" type="number"
+                               name="p1550"
+                               [(ngModel)]="user.p1550">
+                        <span class="input-group-addon">тыс. р.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
