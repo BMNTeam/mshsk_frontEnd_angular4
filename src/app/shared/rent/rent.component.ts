@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../auth.service";
+import {DataService} from "../../data.service";
 
 
 @Component({
@@ -8,13 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RentComponent implements OnInit {
   user = {};
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('userData'));
+    console.dir(localStorage.getItem('userData'));
+    console.dir(this.user);
+    if (localStorage.getItem('userData') !== null) {
+        this.user = JSON.parse(localStorage.getItem('userData'));
+    }
   }
   save() {
-    localStorage.setItem('userData', JSON.stringify(this.user))
+    console.dir(this.user);
+    localStorage.setItem('userData', JSON.stringify(this.user));
+    this.data.userData = this.user;
   }
 
 }

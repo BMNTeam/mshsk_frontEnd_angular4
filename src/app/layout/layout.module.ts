@@ -7,6 +7,8 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { HeaderComponent, SidebarComponent } from '../shared';
 import {AuthService} from "../auth.service";
+import {DataService} from "../data.service";
+import { AnalyzePageComponent } from './analyze-page/analyze-page.component';
 
 @NgModule({
     imports: [
@@ -21,7 +23,8 @@ import {AuthService} from "../auth.service";
         SidebarComponent
     ],
     providers: [
-        AuthService
+        AuthService,
+        DataService
     ]
 })
 export class LayoutModule { }
