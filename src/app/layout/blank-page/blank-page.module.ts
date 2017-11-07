@@ -5,6 +5,7 @@ import { BlankPageComponent } from './blank-page.component';
 import { RentModule } from "../../shared/rent/rent.module";
 import { ButtonsModule} from "../../shared/buttons/buttons.module";
 import {PageHeaderModule} from "../../shared/modules/page-header/page-header.module";
+import {HeaderModule} from "../../shared/header/header.module";
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {PageHeaderModule} from "../../shared/modules/page-header/page-header.mod
     BlankPageRoutingModule,
       RentModule,
       ButtonsModule,
-      PageHeaderModule
+      PageHeaderModule,
+      HeaderModule
 
   ],
   declarations: [BlankPageComponent]

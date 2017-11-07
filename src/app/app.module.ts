@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { RentComponent } from './shared/rent/rent.component';
 import { ButtonsComponent } from './shared/buttons/buttons.component';
+import { HeaderComponent } from './shared/header/header.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
     // for development

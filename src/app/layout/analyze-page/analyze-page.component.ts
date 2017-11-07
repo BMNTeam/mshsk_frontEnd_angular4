@@ -32,6 +32,7 @@ export class AnalyzePageComponent implements OnInit {
     };
     coefficients = [];
     errMessage = 'Введите данные Бухгалтерского баланса';
+    closed = true;
 
     constructor(private data: DataService) {
     }
@@ -206,6 +207,10 @@ export class AnalyzePageComponent implements OnInit {
 
     showUser() {
         console.dir(this.data.userData);
+    }
+
+    closeAlert() {
+        this.closed = false;
     }
 
 }

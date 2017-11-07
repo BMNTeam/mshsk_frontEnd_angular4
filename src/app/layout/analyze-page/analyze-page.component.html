@@ -1,10 +1,12 @@
 <div [@routerTransition]>
-  <app-page-header [heading]="'Показатели финансовой устойчивости'" [icon]="'fa-sheat'"></app-page-header>
+  <app-header-c [heading]="'Показатели финансовой устойчивости'"></app-header-c>
+  <app-page-header [heading]="''" [icon]="'fa-sheat'"></app-page-header>
   <br>
   <div class="card">
     <div class="card-header">Анализ финансовой устойчивости</div>
     <div class="card-block">
-      <table class="card-block table table-hover">
+      <ngb-alert [type]="'info'" *ngIf="closed" (close)="closeAlert()">Чем выше уровень первого, четвертого и пятого показателей и чем ниже уровень второго, третьего и шестого показателей, тем устойчивее ФСП. </ngb-alert>
+      <table class="card-block table table-hover table-responsive">
         <thead>
         <tr>
           <th>Номер</th>
@@ -22,6 +24,7 @@
         </tr>
         </tbody>
       </table>
+
     </div>
   </div>
   <app-buttons></app-buttons>
