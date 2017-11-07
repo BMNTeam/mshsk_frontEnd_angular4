@@ -28,9 +28,16 @@ export class AnalyzePageComponent implements OnInit {
             p1500: 0,
             p1600: 0,
             p1700: 0
+        },
+        coefficients: {
+            sok: 0,
+            pok: 0,
+            oi: 0,
+            zap: 0
         }
     };
-    coefficients = [];
+    financialAnalyzeCoefficients = [];
+    financialTypeAnalyzeCoefficients = [];
     errMessage = 'Введите данные Бухгалтерского баланса';
     closed = true;
 
@@ -59,12 +66,26 @@ export class AnalyzePageComponent implements OnInit {
         this.defaultData.dataSums.p1700 = this.defaultData.dataSums.p1300 + this.defaultData.dataSums.p1400 +
             this.defaultData.dataSums.p1500;
 
+        // Fill array with coefficients
         this.k1();
         this.k2();
         this.k3();
         this.k4();
         this.k5();
         this.k6();
+        this.dsk();
+        this.ddzk();
+        this.sok();
+        this.dsok();
+        this.dzk();
+        this.kmk();
+
+        this.zap();
+        this.financialTypeAnalyzeCoefficients.push(
+            this.makeCoefficient('Собственный оборотный капитал', 'Сок', this.defaultData.coefficients.sok));
+        this.pok();
+        this.oi();
+        this.deltaSok();
 
     }
     // Count balance sums
@@ -129,6 +150,16 @@ export class AnalyzePageComponent implements OnInit {
         this.defaultData.sums.p1100();
     };
 
+    makeCoefficient(name, definition, data) {
+        const coefiicitnt = {
+            id: Math.round(Math.random()),
+            name: name,
+            definition: definition,
+            data: data
+        };
+        return coefiicitnt;
+    }
+
     k1() {
         let coefficient;
         coefficient = this.defaultData.dataSums.p1300 / this.defaultData.dataSums.p1700;
@@ -140,7 +171,7 @@ export class AnalyzePageComponent implements OnInit {
             data: coefficient,
 
         };
-        this.coefficients.push(k1);
+        this.financialAnalyzeCoefficients.push(k1);
 
     }
 
@@ -153,7 +184,7 @@ export class AnalyzePageComponent implements OnInit {
             definition: 'K2',
             data: coefficient
         };
-        this.coefficients.push(k2);
+        this.financialAnalyzeCoefficients.push(k2);
     }
 
     k3() {
@@ -165,7 +196,7 @@ export class AnalyzePageComponent implements OnInit {
             definition: 'K3',
             data: coefficient
         };
-        this.coefficients.push(k3)
+        this.financialAnalyzeCoefficients.push(k3)
     };
 
     k4() {
@@ -177,7 +208,7 @@ export class AnalyzePageComponent implements OnInit {
             definition: 'K4',
             data: coefficient
         };
-        this.coefficients.push(k4);
+        this.financialAnalyzeCoefficients.push(k4);
     }
 
     k5() {
@@ -189,7 +220,7 @@ export class AnalyzePageComponent implements OnInit {
             definition: 'K5',
             data: coefficient
         };
-        this.coefficients.push(k5);
+        this.financialAnalyzeCoefficients.push(k5);
     }
 
     k6() {
@@ -201,8 +232,136 @@ export class AnalyzePageComponent implements OnInit {
             definition: 'K6',
             data: coefficient
         };
-        this.coefficients.push(k6)
+        this.financialAnalyzeCoefficients.push(k6)
     }
+
+    dsk() {
+        let coefficient;
+        coefficient = (this.defaultData.dataSums.p1100 - this.defaultData.dataSums.p1400) / this.defaultData.dataSums.p1100;
+        const dsk = {
+            id: 7,
+            name: 'Доля собственного капитала в формировании',
+            definition: 'Дск',
+            data: coefficient
+        };
+        this.financialAnalyzeCoefficients.push(dsk)
+    }
+
+    ddzk() {
+        let coefficient;
+        coefficient = this.defaultData.dataSums.p1400 / this.defaultData.dataSums.p1100;
+        const ddzk = {
+            id: 8,
+            name: 'Доля долгосрочного заемного капитала в формировании внеоборотных активов',
+            definition: 'Ддзк',
+            data: coefficient
+        };
+        this.financialAnalyzeCoefficients.push(ddzk);
+    }
+
+    sok() {
+        let coefficient;
+        coefficient = this.defaultData.dataSums.p1200 - (this.defaultData.dataSums.p1500 - this.userData['p1530'] -
+            this.userData['p1540']);
+        const sok = {
+            id: 9,
+            name: 'Сумма собственного оборотного капитала',
+            definition: 'СОК',
+            data: coefficient
+        };
+        this.defaultData.coefficients.sok = sok.data;
+        this.financialAnalyzeCoefficients.push(sok);
+    }
+
+    dsok() {
+        let coefficient;
+        coefficient = (this.defaultData.dataSums.p1200 - (this.defaultData.dataSums.p1500 - this.userData['p1530'] -
+            this.userData['p1540']) ) / this.defaultData.dataSums.p1200;
+        const dsok = {
+            id: 10,
+            name: 'Доля собственного оборотного капитала в формировании оборотных активов',
+            definition: 'Дсок',
+            data: coefficient
+        };
+        this.financialAnalyzeCoefficients.push(dsok);
+    }
+
+    dzk() {
+        let coefficient;
+        coefficient = this.defaultData.dataSums.p1500 / this.defaultData.dataSums.p1200;
+        const dzk = {
+            id: 11,
+            name: 'Доля заемного капитала в формировании оборотных активов ',
+            definition: 'Дзк',
+            data: coefficient
+        };
+        this.financialAnalyzeCoefficients.push(dzk);
+    }
+
+    kmk() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.sok / this.defaultData.dataSums.p1300;
+        const kmk = {
+            id: 12,
+            name: 'Коэффициент маневренности капитала (доля собственного капитала в обороте)',
+            definition: 'Кмк',
+            data: coefficient
+        };
+        this.financialAnalyzeCoefficients.push(kmk);
+    }
+
+    zap() {
+        let coefficient;
+        coefficient = this.userData['a1210'];
+        const zap = {
+            id: 13,
+            name: 'Запасы',
+            definition: 'Зап',
+            data: coefficient
+        };
+        this.defaultData.coefficients.zap = coefficient;
+        this.financialTypeAnalyzeCoefficients.push( zap );
+    }
+
+    pok() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.sok + this.defaultData.dataSums.p1400;
+        const pok = {
+            id: 13,
+            name: 'Перманентный оборотный капитал',
+            definition: 'ПОК',
+            data: coefficient
+        };
+        this.defaultData.coefficients.pok = coefficient;
+        this.financialTypeAnalyzeCoefficients.push(pok);
+    }
+
+    oi() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.pok + this.defaultData.dataSums.p1500;
+        const oi = {
+            id: 14,
+            name: 'Общая величина основных источников формирования запасов',
+            definition: 'ОИ',
+            data: coefficient
+        };
+        this.defaultData.coefficients.oi = coefficient;
+        this.financialTypeAnalyzeCoefficients.push(oi);
+    }
+
+    deltaSok() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.sok - this.defaultData.coefficients.zap;
+        const deltaSok = {
+            id: 15,
+            name: 'Излишек (+) или недостаток (-) собственного оборотного капитала (СОК)',
+            definition: 'ΔСОК',
+            data: coefficient
+        };
+        this.financialTypeAnalyzeCoefficients.push(deltaSok)
+    };
+
+
 
 
     showUser() {

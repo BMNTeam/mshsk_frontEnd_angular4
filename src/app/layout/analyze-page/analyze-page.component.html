@@ -3,10 +3,10 @@
   <app-page-header [heading]="''" [icon]="'fa-sheat'"></app-page-header>
   <br>
   <div class="card">
-    <div class="card-header">Анализ финансовой устойчивости</div>
+    <div class="card-header"><b>Анализ финансовой устойчивости</b></div>
     <div class="card-block">
       <ngb-alert [type]="'info'" *ngIf="closed" (close)="closeAlert()">Чем выше уровень первого, четвертого и пятого показателей и чем ниже уровень второго, третьего и шестого показателей, тем устойчивее ФСП. </ngb-alert>
-      <table class="card-block table table-hover table-responsive">
+      <table class="card-block table table-hover table-striped">
         <thead>
         <tr>
           <th>Номер</th>
@@ -16,8 +16,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let coefficient of coefficients">
-          <th scope="row">{{coefficient.id}}</th>
+        <tr *ngFor="let coefficient of financialAnalyzeCoefficients; let i = index;" [attr.data-index]="i">
+          <th scope="row">{{ i+1 }}</th>
           <td>{{ coefficient.name }}</td>
           <td>{{ coefficient.definition }}</td>
           <td>{{ coefficient.data | number }}</td>
@@ -26,6 +26,33 @@
       </table>
 
     </div>
-  </div>
+  </div> <!-- end financial analyze -->
+  <br>
+
+  <div class="card">
+    <div class="card-header"><b>Анализ типа финансовой устойсивости</b></div>
+    <div class="card-block">
+      <table class="card-block table table-hover table-striped">
+        <thead>
+        <tr>
+          <th>Номер</th>
+          <th>Наименование показателя</th>
+          <th>Обозначение</th>
+          <th>Значение</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let coefficient of financialTypeAnalyzeCoefficients; let i = index" [attr.data-index]="i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ coefficient.name }}</td>
+          <td>{{ coefficient.definition }}</td>
+          <td>{{ coefficient.data | number }}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div> <!-- end financial type analyze -->
+
   <app-buttons></app-buttons>
 </div>
