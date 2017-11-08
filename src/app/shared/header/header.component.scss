@@ -1,0 +1,18 @@
+.heading-wrapper {
+  background-color: #292b2c;
+  margin-top: -10px;
+  padding: 10px;
+}
+
+.heading {
+  padding: 40px;
+  color: white;
+  border: 1px solid white;
+  text-align: center;
+  transition: all ease-in .4s;
+}
+
+.heading:hover {
+  background-color: black;
+  cursor: pointer;
+}

@@ -6,6 +6,7 @@ import { PageHeaderModule} from "../../shared/modules/page-header/page-header.mo
 import { AnalyzePageRoutingModule} from "./analyze-page-routing.module";
 import { NgbAlertModule } from "@ng-bootstrap/ng-bootstrap";
 import { HeaderModule } from "../../shared/header/header.module";
+import {FinancialStateModule} from "../../shared/financial-state/financial-state.module";
 
 @NgModule({
     imports: [
@@ -14,8 +15,8 @@ import { HeaderModule } from "../../shared/header/header.module";
         PageHeaderModule,
         AnalyzePageRoutingModule,
         NgbAlertModule.forRoot(),
-        HeaderModule
-
+        HeaderModule,
+        FinancialStateModule
     ],
     declarations: [AnalyzePageComponent]
 })

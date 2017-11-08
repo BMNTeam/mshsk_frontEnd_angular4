@@ -86,6 +86,11 @@ export class AnalyzePageComponent implements OnInit {
         this.pok();
         this.oi();
         this.deltaSok();
+        this.ksok();
+        this.deltaPok();
+        this.kpok();
+        this.deltaOi();
+        this.koi();
 
     }
     // Count balance sums
@@ -361,8 +366,64 @@ export class AnalyzePageComponent implements OnInit {
         this.financialTypeAnalyzeCoefficients.push(deltaSok)
     };
 
+    ksok() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.sok / this.defaultData.coefficients.zap;
+        const ksok = {
+            id: 16,
+            name: 'Соотношение СОК и Запасов',
+            definition: 'Ксок',
+            data: coefficient
+        };
+        this.financialTypeAnalyzeCoefficients.push(ksok);
+    }
 
+    deltaPok() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.pok - this.defaultData.coefficients.zap;
+        const deltaPok = {
+            id: 17,
+            name: 'Излишек (+) или недостаток (-) перманентного капитала (ПОК)',
+            definition: 'ΔПОК',
+            data: coefficient
+        };
+        this.financialTypeAnalyzeCoefficients.push(deltaPok);
+    }
 
+    kpok() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.pok / this.defaultData.coefficients.zap;
+        const kpok = {
+            id: 18,
+            name: 'Соотношение СОК и Запасов',
+            definition: 'Кпок',
+            data: coefficient
+        };
+        this.financialTypeAnalyzeCoefficients.push(kpok);
+    }
+    deltaOi() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.oi - this.defaultData.coefficients.zap;
+        const deltaOi = {
+            id: 19,
+            name: 'Излишек (+) или недостаток (-) общей величины основных источников формирования запасов (ОИ)',
+            definition: '∆ОИ',
+            data: coefficient
+        };
+        this.financialTypeAnalyzeCoefficients.push(deltaOi);
+    }
+
+    koi() {
+        let coefficient;
+        coefficient = this.defaultData.coefficients.oi / this.defaultData.coefficients.zap;
+        const koi = {
+            id: 20,
+            name: 'Соотношение ОИ и Запасов',
+            definition: 'Кои',
+            data: coefficient
+        };
+        this.financialTypeAnalyzeCoefficients.push(koi)
+    }
 
     showUser() {
         console.dir(this.data.userData);
