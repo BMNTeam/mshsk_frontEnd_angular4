@@ -1,7 +1,13 @@
 <div [@routerTransition]>
-  <app-header-c [heading]="'Показатели финансовой устойчивости'"></app-header-c>
-  <app-page-header [heading]="''" [icon]="'fa-sheat'"></app-page-header>
-  <h2>Hello world</h2>
-
-  <app-buttons></app-buttons>
+  <app-header-c [heading]="'Алгоритм проведения внутреннего мониторинга финансовой устойчивости сельхотоваропроизводителей'"></app-header-c>
+  <hr>
+  <ngb-carousel class="custom-carousel">
+    <ng-template ngbSlide *ngFor="let slider of sliders">
+      <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Random first slide" width="100%">
+      <!--<div class="carousel-caption">-->
+        <!--<h3>{{slider.label}}</h3>-->
+        <!--<p>{{slider.text}}</p>-->
+      <!--</div>-->
+    </ng-template>
+  </ngb-carousel>
 </div>

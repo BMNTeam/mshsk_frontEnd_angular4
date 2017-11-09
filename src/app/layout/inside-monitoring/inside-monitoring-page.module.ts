@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonsModule } from "../../shared/buttons/buttons.module";
 import { PageHeaderModule} from "../../shared/modules/page-header/page-header.module";
-import { AnalyzePageRoutingModule} from "./inside-monitoring.routing.module";
-import { NgbAlertModule } from "@ng-bootstrap/ng-bootstrap";
+import {NgbAlertModule, NgbCarouselModule} from "@ng-bootstrap/ng-bootstrap";
 import { HeaderModule } from "../../shared/header/header.module";
-import {InsideMonitoringPageComponent} from "./inside-monitoring-page.component";
+import { InsideMonitoringPageComponent } from "./inside-monitoring-page.component";
+import { InsideMonitoringRoutingModule } from "./inside-monitoring.routing.module";
 
 // todo fix problems with current namespace
 
@@ -14,9 +14,10 @@ import {InsideMonitoringPageComponent} from "./inside-monitoring-page.component"
         CommonModule,
         ButtonsModule,
         PageHeaderModule,
-        AnalyzePageRoutingModule,
+        InsideMonitoringRoutingModule,
         NgbAlertModule.forRoot(),
-        HeaderModule
+        HeaderModule,
+        NgbCarouselModule.forRoot()
     ],
     declarations: [InsideMonitoringPageComponent]
 })

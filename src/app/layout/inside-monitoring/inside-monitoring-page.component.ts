@@ -10,10 +10,14 @@ import {DataService} from "../../data.service";
     animations: [routerTransition()]
 })
 export class InsideMonitoringPageComponent implements OnInit {
-   constructor() {}
+    sliders = [];
+   constructor( public dataService: DataService) {
+       this.sliders = dataService.generateImagesForSlider('test', 5)
+
+   }
 
    ngOnInit() {
-
+        console.dir(this.sliders);
    }
 
 }

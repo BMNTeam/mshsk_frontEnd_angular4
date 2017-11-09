@@ -13,6 +13,7 @@ const routes: Routes = [
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'analyze', loadChildren: './analyze-page/analyze-page.module#AnalyzePageModule' },
+            { path: 'inside-monitoring', loadChildren: './inside-monitoring/inside-monitoring-page.module#InsideMonitoringPageModule'},
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
         ]
     }
