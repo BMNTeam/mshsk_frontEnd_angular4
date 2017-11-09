@@ -31,8 +31,11 @@ export class AnalyzePageComponent implements OnInit {
         },
         coefficients: {
             sok: 0,
+            ksok: 0,
+            kpok: 0,
             pok: 0,
             oi: 0,
+            koi: 0,
             zap: 0
         }
     };
@@ -40,6 +43,13 @@ export class AnalyzePageComponent implements OnInit {
     financialTypeAnalyzeCoefficients = [];
     errMessage = 'Введите данные Бухгалтерского баланса';
     closed = true;
+
+    financialTypeAnalyzeResult = {
+        status: '',
+        definition: '',
+        name: '',
+        progressBar: 0
+    };
 
     constructor(private data: DataService) {
     }
@@ -91,6 +101,8 @@ export class AnalyzePageComponent implements OnInit {
         this.kpok();
         this.deltaOi();
         this.koi();
+
+        this.getFinancialState();
 
     }
     // Count balance sums
@@ -375,6 +387,7 @@ export class AnalyzePageComponent implements OnInit {
             definition: 'Ксок',
             data: coefficient
         };
+        this.defaultData.coefficients.ksok = coefficient;
         this.financialTypeAnalyzeCoefficients.push(ksok);
     }
 
@@ -422,7 +435,53 @@ export class AnalyzePageComponent implements OnInit {
             definition: 'Кои',
             data: coefficient
         };
+        this.defaultData.coefficients.koi = coefficient;
         this.financialTypeAnalyzeCoefficients.push(koi)
+    }
+
+    // Financial state
+    getFinancialState() {
+        // Sok >= Zap && Ksok >= 1
+        if (this.defaultData.coefficients.sok >= this.defaultData.coefficients.zap
+            && this.defaultData.coefficients.ksok >= 1) {
+            this.financialTypeAnalyzeResult = {
+                status: 'done',
+                definition: 'I',
+                name: 'Абсолютная устойчивость',
+                progressBar: 100
+            }
+        } else if (this.defaultData.coefficients.sok < this.defaultData.coefficients.pok
+            && this.defaultData.coefficients.pok >= this.defaultData.coefficients.zap
+            && this.defaultData.coefficients.ksok < 1
+            && this.defaultData.coefficients.kpok >= 1 ) {
+            this.financialTypeAnalyzeResult = {
+                status: 'done',
+                definition: 'II',
+                name: 'Нормальная устойчивость',
+                progressBar: 75
+            }
+        } else if (this.defaultData.coefficients.sok < this.defaultData.coefficients.zap
+            && this.defaultData.coefficients.pok < this.defaultData.coefficients.zap
+            && this.defaultData.coefficients.oi >= this.defaultData.coefficients.zap
+            && this.defaultData.coefficients.ksok < 1
+            && this.defaultData.coefficients.kpok < 1
+            && this.defaultData.coefficients.koi >= 1) {
+            this.financialTypeAnalyzeResult = {
+                status: 'done',
+                definition: 'III',
+                name: 'Неустойчивое (предкризисное) состояние',
+                progressBar: 50
+            }
+        } else {
+            this.financialTypeAnalyzeResult = {
+                status: 'done',
+                definition: 'IV',
+                name: 'Кризисное финансовое состояние',
+                progressBar: 25
+            }
+        }
+
+        console.dir(this.financialTypeAnalyzeResult);
     }
 
     showUser() {

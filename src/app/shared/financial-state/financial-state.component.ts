@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SafeStyle} from "@angular/platform-browser";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-financial-state',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./financial-state.component.scss']
 })
 export class FinancialStateComponent implements OnInit {
-
-  constructor() { }
+  @Input() progress;
+  constructor(private sanitization: DomSanitizer) { }
 
   ngOnInit() {
+      //this.progress = this.sanitization.bypassSecurityTrustStyle('width: 100');
   }
 
 }
