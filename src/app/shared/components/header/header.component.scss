@@ -1,4 +1,16 @@
 $topnav-background-color: #222;
+.bmn.navbar-brand {
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+
+}
+
+.bmn.navbar-brand:hover {
+    max-width: 600%;
+    width: 600%;
+    transition: max-width ease-in .4s
+}
 .topnav {
     border-radius: 0;
     background-color: $topnav-background-color;

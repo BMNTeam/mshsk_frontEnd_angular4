@@ -14,6 +14,8 @@ const routes: Routes = [
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'analyze', loadChildren: './analyze-page/analyze-page.module#AnalyzePageModule' },
             { path: 'inside-monitoring', loadChildren: './inside-monitoring/inside-monitoring-page.module#InsideMonitoringPageModule'},
+            { path: 'perspectives', loadChildren: './perspective/perspective-page.module#PerspectivePageModule'},
+            { path: 'improvements', loadChildren: './improvements/improvements-page.module#ImprovementsPageModule'},
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
         ]
     }

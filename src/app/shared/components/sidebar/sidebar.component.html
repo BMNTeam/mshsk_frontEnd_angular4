@@ -4,16 +4,22 @@
             <i class="fa fa-dashboard"></i>&nbsp;{{ 'Панель управления' | translate }}
         </a>
         <a [routerLink]="['/inside-monitoring']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-arrow-down"></i>&nbsp;{{ ' Алгоритм' | translate }}
+            <i class="fa fa-info"></i>&nbsp;{{ ' Алгоритм' | translate }}
         </a>
         <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file-o"></i>&nbsp;{{ ' Бух баланс' | translate }}
         </a>
         <a [routerLink]="['/analyze']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-th-list"></i>&nbsp;{{ ' Анализ' | translate }}
+            <i class="fa fa-cogs"></i>&nbsp;{{ ' Анализ' | translate }}
+        </a>
+        <a [routerLink]="['/perspectives']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-info"></i>&nbsp;{{ ' Перспективы' | translate }}
+        </a>
+        <a [routerLink]="['/improvements']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-info"></i>&nbsp;{{ ' Повышение' | translate }}
         </a>
 
-        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+       <!-- <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Графики' | translate }}
         </a>
         <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
@@ -46,7 +52,7 @@
                     </li>
                 </ul>
             </li>
-        </div>
+        </div>-->
 
         <!--<a class="list-group-item more-themes" href="http://www.strapui.com/" >
             {{ 'More Theme' | translate }}

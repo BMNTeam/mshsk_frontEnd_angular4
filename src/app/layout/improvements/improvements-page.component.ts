@@ -4,15 +4,15 @@ import {DataService} from "../../data.service";
 
 
 @Component({
-    selector: 'app-inside-monitoring-page',
-    templateUrl: './inside-monitoring-page.component.html',
-    styleUrls: ['./inside-monitoring-page.component.scss'],
+    selector: 'app-improvements-page',
+    templateUrl: './improvements-page.component.html',
+    styleUrls: ['./improvements-page.component.scss'],
     animations: [routerTransition()]
 })
-export class InsideMonitoringPageComponent implements OnInit {
+export class ImprovementsPageComponent implements OnInit {
     sliders = [];
    constructor( public dataService: DataService) {
-       this.sliders = dataService.generateImagesForSlider('algorithm', 17)
+       this.sliders = dataService.generateImagesForSlider('improvements', 15)
 
    }
 

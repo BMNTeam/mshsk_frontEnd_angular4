@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import construct = Reflect.construct;
 
 @Component({
     selector: 'app-layout',

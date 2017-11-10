@@ -11,7 +11,7 @@ export class DataService {
   }
   generateImagesForSlider(folderName: string, number: number) {
     const arrays = [];
-    for (let i = 1; i <= number; i++) {
+    for (let i = 0; i <= number; i++) {
       let image;
       image = {
         imagePath: 'assets/images/' + folderName + '/' + i + '.jpg'
