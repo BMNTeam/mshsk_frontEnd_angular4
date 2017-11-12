@@ -5,11 +5,12 @@ import { Http} from "@angular/http";
 export class AuthService {
   data: any = {};
   user = {};
+  apiServer = 'http://localhost:8080';
 
   constructor(private http: Http) {}
 
   authorizeUser(authInfo) {
-    return this.http.post('http://localhost:8080/api/login', authInfo).map(
+    return this.http.post(this.apiServer + '/api/login', authInfo).map(
         data => {
            const jsonUser = data.json();
            this.setUserData(jsonUser.user);
@@ -24,7 +25,7 @@ export class AuthService {
           password: data.password,
           fullName: data.fullName
       };
-      return this.http.post('http://localhost:8080/api/add-user', userData)
+      return this.http.post(this.apiServer + '/api/add-user', userData)
           .map( res => {
               const jsonUser = res.json();
               this.setUserData(jsonUser.user);
@@ -41,6 +42,19 @@ export class AuthService {
             email: jsonUser.email
         };
         return jsonUser;
+    }
+
+    sendEmailToSupport(form) {
+      const emailData = {
+          email: form.email,
+          userName: form.userName,
+          message: form.message,
+          captcha: form.captcha
+      };
+      return this.http.post(this.apiServer + '/api/send-email', emailData)
+          .map( res => {
+              return res.json();
+          })
     }
 
 }

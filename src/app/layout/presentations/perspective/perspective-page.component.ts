@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {routerTransition} from "../../router.animations";
-import {DataService} from "../../data.service";
+import {routerTransition} from "../../../router.animations";
+import {DataService} from "../../../data.service";
 
 
 @Component({

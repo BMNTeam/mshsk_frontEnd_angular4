@@ -3,6 +3,9 @@
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-dashboard"></i>&nbsp;{{ 'Панель управления' | translate }}
         </a>
+        <a [routerLink]="['/preparations']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-info"></i>&nbsp;{{ ' Подготовка' | translate }}
+        </a>
         <a [routerLink]="['/inside-monitoring']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-info"></i>&nbsp;{{ ' Алгоритм' | translate }}
         </a>
@@ -18,8 +21,23 @@
         <a [routerLink]="['/improvements']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-info"></i>&nbsp;{{ ' Повышение' | translate }}
         </a>
+        <a [routerLink]="['/strategy']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-info"></i>&nbsp;{{ ' Стратегия' | translate }}
+        </a>
+        <a [routerLink]="['/results']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-info"></i>&nbsp;{{ ' Результаты' | translate }}
+        </a>
+        <a [routerLink]="['/trustability']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-info"></i>&nbsp;{{ ' Кредитоспособность' | translate }}
+        </a>
+        <hr>
+        <a [routerLink]="['/contacts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-phone"></i>&nbsp;{{ ' Контакты' | translate }}
+        </a>
 
-       <!-- <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+
+       <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Графики' | translate }}
         </a>
         <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
@@ -52,7 +70,7 @@
                     </li>
                 </ul>
             </li>
-        </div>-->
+        </div>
 
         <!--<a class="list-group-item more-themes" href="http://www.strapui.com/" >
             {{ 'More Theme' | translate }}

@@ -21,4 +21,16 @@ export class DataService {
     return arrays;
   }
 
+  generateSpecialImageUsingMacFeatures(folderName: string, number: number) {
+      const arrays = [];
+      for (let i = 0; i <= number; i++) {
+          let image;
+          image = {
+              imagePath: 'assets/images/' + folderName + '/_' + i + '.jpg'
+          };
+          arrays.push(image) ;
+      }
+      return arrays;
+  }
+
 }

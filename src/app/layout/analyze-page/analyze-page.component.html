@@ -2,10 +2,10 @@
   <app-header-c [heading]="'Показатели финансовой устойчивости'"></app-header-c>
   <app-page-header [heading]="''" [icon]="'fa-sheat'"></app-page-header>
   <br>
-  <app-financial-state [progress]="80"> </app-financial-state>
+  <app-financial-state [stateName]="financialTypeAnalyzeResult.name" [progress]="financialTypeAnalyzeResult.progressBar"> </app-financial-state>
     <br>
   <div class="card">
-    <div class="card-header"><b>Анализ финансовой устойчивости</b></div>
+    <div class="card-header"><b>Детали анализа финансовой устойчивости</b></div>
     <div class="card-block">
       <ngb-alert [type]="'info'" *ngIf="closed" (close)="closeAlert()">Чем выше уровень первого, четвертого и пятого показателей и чем ниже уровень второго, третьего и шестого показателей, тем устойчивее ФСП. </ngb-alert>
       <table class="card-block table table-hover table-striped">
@@ -32,7 +32,7 @@
   <br>
 
   <div class="card">
-    <div class="card-header"><b>Анализ типа финансовой устойсивости</b></div>
+    <div class="card-header"><b>Детали анализа типа финансовой устойсивости</b></div>
     <div class="card-block">
       <table class="card-block table table-hover table-striped">
         <thead>

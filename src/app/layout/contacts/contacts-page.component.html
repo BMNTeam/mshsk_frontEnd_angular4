@@ -1,0 +1,43 @@
+
+<div [@routerTransition]>
+    <app-header-c [heading]="'Контакты'"></app-header-c>
+    <br>
+    <form #f="ngForm" (submit)="test(f.value)">
+        <div class="card">
+            <div class="card-header"><b>Контактная форма</b>: все поля обязательны для заполнения</div>
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <label>Ваше ФИО</label>
+                            <input name="userName" type="text" class="form-control" ngModel placeholder="Например: Иванов Иван Иванович"
+                                   required>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label>Email</label>
+                            <input name="email" ngModel type="text" class="form-control" placeholder="Например: example@mail.ru" required>
+                        </fieldset>
+                        <re-captcha name="captcha" ngModel site_key="6Lc1PTgUAAAAAJ8BF1Zpf67S8j_npYBl9rsi9Ip8"></re-captcha>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <label>Сообщение</label>
+                            <textarea name="message" ngModel rows="6" class="form-control" placeholder="Пример: Проблемы при анализе коэффициента покрытия" required> </textarea>
+                        </fieldset>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-secondary" type="submit">Отправить</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
