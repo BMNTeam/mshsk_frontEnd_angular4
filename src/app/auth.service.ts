@@ -23,7 +23,8 @@ export class AuthService {
       const userData = {
           email: data.email,
           password: data.password,
-          fullName: data.fullName
+          fullName: data.fullName,
+          captcha: data.captcha
       };
       return this.http.post(this.apiServer + '/api/add-user', userData)
           .map( res => {

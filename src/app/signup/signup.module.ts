@@ -5,13 +5,15 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SignupRoutingModule } from './signup-routing.module';
 import { SignupComponent } from './signup.component';
 import {AuthService} from "../auth.service";
+import {ReCaptchaModule} from "angular2-recaptcha";
 
 @NgModule({
   imports: [
     CommonModule,
     SignupRoutingModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      ReCaptchaModule
   ],
     providers: [AuthService],
   declarations: [SignupComponent]

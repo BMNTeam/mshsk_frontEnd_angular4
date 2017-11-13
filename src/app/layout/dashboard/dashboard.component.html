@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-    <h2 class="text-muted">Панель управления</h2>
+    <h2 class="text-muted">Электронный информационно-аналитический ресурс по оценке финансовой устойчивости сельскохозяйственных производителей Cтавропольского края</h2>
 <!--    <div class="row">
         <div class="col-md-12">
             <ngb-carousel>
@@ -30,6 +30,11 @@
     </div>-->
     <hr />
     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>
+    <!-- Yandex.Metrika informer -->
+    <a href="https://metrika.yandex.ru/stat/?id=46615974&amp;from=informer"
+       target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/46615974/3_0_FFFFFFFF_EFEFEFFF_0_pageviews"
+                                           style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a>
+    <!-- /Yandex.Metrika informer -->
     <hr />
     <div class="row">
         <div class="col-lg-12">

@@ -20,6 +20,10 @@
                     <div class="form-group">
                         <input type="password" (blur)="isTheSamePasswords(f.value)" class="form-control input-underline input-lg" id="repeatPassword" name="repeatPassword" placeholder="Повторите пароль" ngModel>
                     </div>
+                    <div class="form-group">
+                        <re-captcha name="captcha" ngModel site_key="6Lc1PTgUAAAAAJ8BF1Zpf67S8j_npYBl9rsi9Ip8"></re-captcha>
+                    </div>
+
                     <div *ngIf="err" class="alert alert-danger" role="alert">{{err}}</div>
                 </div>
                 <input type="submit" class="btn rounded-btn" value="Зарегистрироваться" [disabled]="f.invalid">

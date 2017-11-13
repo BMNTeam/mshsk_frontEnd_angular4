@@ -23,6 +23,8 @@ export class SignupComponent implements OnInit {
             if (data.status === 'ok') {
                localStorage.setItem('user', JSON.stringify(data) );
                this.router.navigate(['/dashboard']);
+            } else {
+                this.err = data.message;
             }
         })
     }

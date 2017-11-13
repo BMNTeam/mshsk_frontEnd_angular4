@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --ec true --port 4201",
-    "build": "ng build --prod",
+    "build": "ng build --prod --base-href https://github.com/BMNTeam/mshsk_financial_angular_production",
     "gitbuild": "ng build --prod --base /start-angular/SB-Admin-BS4-Angular-4/master/dist/",
     "test": "ng test",
     "lint": "ng lint",

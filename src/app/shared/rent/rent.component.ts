@@ -9,7 +9,7 @@ import {DataService} from "../../data.service";
   styleUrls: ['./rent.component.scss']
 })
 export class RentComponent implements OnInit {
-  user = {};
+  user: any;
   constructor(private data: DataService) { }
 
   ngOnInit() {
