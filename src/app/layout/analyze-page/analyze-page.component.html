@@ -8,7 +8,7 @@
     <div class="card-header"><b>Детали анализа финансовой устойчивости</b></div>
     <div class="card-block">
       <ngb-alert [type]="'info'" *ngIf="closed" (close)="closeAlert()">Чем выше уровень первого, четвертого и пятого показателей и чем ниже уровень второго, третьего и шестого показателей, тем устойчивее ФСП. </ngb-alert>
-      <table class="card-block table table-hover table-striped">
+      <table class="card-block table table-hover table-striped table-responsive">
         <thead>
         <tr>
           <th>Номер</th>
@@ -34,7 +34,7 @@
   <div class="card">
     <div class="card-header"><b>Детали анализа типа финансовой устойсивости</b></div>
     <div class="card-block">
-      <table class="card-block table table-hover table-striped">
+      <table class="card-block table table-hover table-striped table-responsive">
         <thead>
         <tr>
           <th>Номер</th>

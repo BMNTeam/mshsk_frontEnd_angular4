@@ -21,6 +21,7 @@ const routes: Routes = [
             { path: 'results', loadChildren: './presentations/results/results-page.module#ResultsPageModule'},
             { path: 'trustability', loadChildren: './presentations/trustability/trustability-page.module#TrustabilityPageModule'},
             { path: 'preparations', loadChildren: './presentations/preparations/preparations-page.module#PreparationsPageModule'},
+            { path: 'models', loadChildren: './presentations/models/models-page.module#ModelsPageModule'},
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
         ]
     }
