@@ -5,7 +5,7 @@ import { Http} from "@angular/http";
 export class AuthService {
   data: any = {};
   user = {};
-  apiServer = 'http://localhost:8080';
+  apiServer = 'https://mshsk.herokuapp.com';
 
   constructor(private http: Http) {}
 
