@@ -11,19 +11,27 @@ import {AuthService} from "../../auth.service";
     animations: [routerTransition()]
 })
 export class ContactsPageComponent implements OnInit {
-    sliders = [];
+    errMessage = '';
+    successMessage = '';
    constructor( public auth: AuthService) {
 
    }
 
    ngOnInit() {
-        console.dir(this.sliders);
    }
 
    test(form) {
        this.auth.sendEmailToSupport(form).subscribe(
            (res) => {
-               console.dir(res);
+               const resJson = res;
+               console.dir(resJson);
+               if (resJson.status === 'ok') {
+                   this.successMessage = resJson.message;
+                   this.errMessage = '';
+               } else {
+                   this.errMessage = resJson.message;
+                   this.successMessage = '';
+               }
            }
        )
    }

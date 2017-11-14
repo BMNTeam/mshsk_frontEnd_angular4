@@ -12,12 +12,11 @@ import {DataService} from "../../../data.service";
 export class PerspectivePageComponent implements OnInit {
     sliders = [];
    constructor( public dataService: DataService) {
-       this.sliders = dataService.generateImagesForSlider('perspectives', 20)
+       this.sliders = dataService.generateSpecialImageUsingMacFeatures('perspectives', 20)
 
    }
 
    ngOnInit() {
         console.dir(this.sliders);
    }
-
 }

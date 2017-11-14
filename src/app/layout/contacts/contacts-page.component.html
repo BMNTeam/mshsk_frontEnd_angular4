@@ -6,8 +6,13 @@
         <div class="card">
             <div class="card-header"><b>Контактная форма</b>: все поля обязательны для заполнения</div>
             <div class="card-block">
+                <div class="col-md-12">
+                    <div *ngIf="errMessage" class="alert alert-danger" role="alert">{{errMessage}}</div>
+                    <div *ngIf="successMessage" class="alert alert-success" role="alert">{{successMessage}}</div>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
+
                         <fieldset class="form-group">
                             <label>Ваше ФИО</label>
                             <input name="userName" type="text" class="form-control" ngModel placeholder="Например: Иванов Иван Иванович"
@@ -33,7 +38,7 @@
         <br>
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-secondary" type="submit">Отправить</button>
+                <button class="btn btn-secondary" type="submit" [disabled]="f.invalid">Отправить</button>
             </div>
         </div>
 

@@ -9,13 +9,15 @@ import {DataService} from "../../data.service";
   styleUrls: ['./rent.component.scss']
 })
 export class RentComponent implements OnInit {
-  user: any;
+  user: any = {};
   constructor(private data: DataService) { }
 
   ngOnInit() {
     console.dir(localStorage.getItem('userData'));
     console.dir(this.user);
-    if (localStorage.getItem('userData') !== null) {
+    if (localStorage.getItem('userData') !== null
+        && localStorage.getItem('userData') !== undefined
+        && localStorage.getItem('userData') !== '') {
         this.user = JSON.parse(localStorage.getItem('userData'));
     }
   }

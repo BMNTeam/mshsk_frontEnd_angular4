@@ -26,7 +26,7 @@ export class DataService {
       for (let i = 0; i <= number; i++) {
           let image;
           image = {
-              imagePath: 'assets/images/' + folderName + '/_' + i + '.jpg'
+              imagePath: 'assets/images/' + folderName + '/a' + i + '.jpg'
           };
           arrays.push(image) ;
       }

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --ec true --port 4201",
+    "start": "ng serve --ec true --port 4204",
     "build": "ng build --prod --base-href https://bmnteam.github.io/mshsk-financial/",
     "gitbuild": "ng build --prod --base /bmnteam/mshsk_financial_angular_production/master/",
     "test": "ng test",
